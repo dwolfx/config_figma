@@ -1,0 +1,37 @@
+# >>> FIGMA-MCP BEGIN
+# ─────────────────────────────────────────────────────────────────────────────
+#  Figma Desktop Bridge (MCP) — ATIVADO
+#  Ligue/desligue com:  C:\Sites\Config_Figma\dsh\figma-toggle.ps1 -Action on|off
+#  Ferramentas expostas como: mcp__figma__<tool>
+#  Pré-requisito: plugin "Figma Desktop Bridge" rodando dentro do Figma.
+# ─────────────────────────────────────────────────────────────────────────────
+
+- insert:
+    - id: mcp-figma-bridge
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: figma
+        transport: stdio
+        command: 'C:\Program Files\nodejs\npx.cmd'
+        args:
+          - '-y'
+          - 'figma-console-mcp'
+        env:
+          FIGMA_ACCESS_TOKEN: 'YOUR_FIGMA_ACCESS_TOKEN'
+        toolCallTimeoutMs: 120000
+        failOnStartupError: false
+
+#  OPCIONAL — servidor REST antigo (http://127.0.0.1:3333/mcp)
+#  Só descomente se você realmente subir esse servidor.
+#
+# - insert:
+#     - id: mcp-figma-rest
+#       name: '@deepseek-ai/dsh-mcp-client'
+#       config:
+#         serverName: figma_rest
+#         transport: streamable-http
+#         url: http://127.0.0.1:3333/mcp
+#         headers:
+#           X-Figma-Token: 'YOUR_FIGMA_ACCESS_TOKEN'
+#         failOnStartupError: false
+# <<< FIGMA-MCP END

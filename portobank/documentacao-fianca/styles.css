@@ -1,0 +1,769 @@
+/* ==========================================================================
+   PORTO SEGURO - DOCUMENTAÇÃO DEV ALUGUEL/FIANÇA
+   Pixel-faithful styling reproducing Figma Home (Proposal) artboard
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+:root {
+  /* Default Border Radius = 4px conforme solicitado */
+  --radius-default: 4px;
+
+  /* Cores Principais da Marca */
+  --porto-blue: #00ADEF;
+  --porto-blue-hover: #0096ce;
+  --text-dark: #2D3748;
+  --text-body: #333333;
+  --text-muted: #666666;
+  --border-light: #E5E7EB;
+
+  /* Cards de Código e Responses */
+  --code-header-request: #5C5C5C;
+  --code-sub-request: #4A4A4A;
+  --code-header-success: #15803D;
+  --code-sub-success: #166534;
+  --code-header-danger: #B91C1C;
+  --code-sub-danger: #991B1B;
+  --code-body-bg: #383838;
+  --code-max-height: 500px;
+
+  /* Banners e Alertas */
+  --banner-cyan-bg: #00ADEF;
+  --banner-amber-bg: #D97706;
+  
+  /* Tabelas e Checklists */
+  --table-header-bg: #D1D5DB;
+  --table-header-text: #1F2937;
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #FFFFFF;
+  color: #333333;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Top Header (Figma height 120px)
+   ========================================================================== */
+.top-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  height: 120px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.header-inner {
+  max-width: 1205px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--porto-blue);
+}
+
+.nav-link.active {
+  color: var(--porto-blue);
+}
+
+.nav-link.nav-link-exit {
+  color: #EF4444;
+}
+
+/* ==========================================================================
+   Document Container & Layout
+   ========================================================================== */
+.main-wrapper {
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.document-container {
+  max-width: 1205px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  padding: 48px 16px 80px 16px;
+}
+
+/* Left Sidebar (Figma width 300px) */
+.sidebar-left {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.sidebar-sticky {
+  position: sticky;
+  top: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.sidebar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-category {
+  color: var(--porto-blue);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.sidebar-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-link {
+  display: block;
+  font-size: 13px;
+  color: #666666;
+  text-decoration: none;
+  padding: 3px 0;
+  line-height: 1.5;
+  transition: all 0.15s ease;
+}
+
+.sidebar-link:hover {
+  color: var(--porto-blue);
+  transform: translateX(2px);
+}
+
+.sidebar-link.active {
+  color: var(--porto-blue);
+  font-weight: 700;
+}
+
+/* Right Content Area (Figma width 795px) */
+.content-right {
+  width: 795.5px;
+  max-width: 795.5px;
+  flex: 1;
+}
+
+.content-section {
+  padding-top: 16px;
+}
+
+.content-separator {
+  height: 1.5px;
+  background-color: #E5E7EB;
+  margin: 48px 0;
+}
+
+/* ==========================================================================
+   Typography & Hero Sections
+   ========================================================================== */
+.main-title {
+  font-size: 39px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.section-h2 {
+  font-size: 32.5px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 36px;
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.section-h3 {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 28px;
+  margin-bottom: 14px;
+}
+
+.section-h4 {
+  font-size: 16.3px;
+  font-weight: 600;
+  color: #333333;
+  margin-top: 22px;
+  margin-bottom: 12px;
+}
+
+.paragraph {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.feature-block {
+  margin-bottom: 18px;
+}
+
+.feature-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 4px;
+}
+
+.feature-desc {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.6;
+}
+
+.nota-text {
+  font-size: 14px;
+  color: #333333;
+  margin: 20px 0;
+  line-height: 1.5;
+}
+
+.inline-link {
+  color: var(--porto-blue);
+  text-decoration: underline;
+  transition: color 0.15s ease;
+}
+
+.inline-link:hover {
+  color: var(--porto-blue-hover);
+}
+
+.hero-two-col {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+
+.hero-illustration {
+  flex-shrink: 0;
+  width: 380px;
+}
+
+.img-hero {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text p {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* Lists */
+.ordered-list, .bullet-list {
+  margin: 14px 0 20px 24px;
+  font-size: 14px;
+  color: #333333;
+}
+
+.ordered-list li, .bullet-list li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Code Boxes (Exact Match to Figma Colors & Layers)
+   ========================================================================== */
+.code-box {
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  margin: 24px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.code-header {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.code-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #FFFFFF;
+}
+
+.code-title-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
+}
+
+.btn-copy-code {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: var(--radius-default);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-copy-code:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-copy-code.copied {
+  background-color: #10B981;
+  border-color: #10B981;
+}
+
+.code-subheader {
+  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Theme 1: Request (Dark Gray / Charcoal) */
+.code-box-request .code-header {
+  background-color: var(--code-header-request);
+}
+
+.code-box-request .code-subheader {
+  background-color: var(--code-sub-request);
+  color: #E5E7EB;
+}
+
+/* Theme 2: Success Response (Forest Green) */
+.code-box-success .code-header {
+  background-color: var(--code-header-success);
+}
+
+.code-box-success .code-subheader {
+  background-color: var(--code-sub-success);
+  color: #DCFCE7;
+}
+
+/* Theme 3: Error / Conflict Response (Crimson Red) */
+.code-box-danger .code-header {
+  background-color: var(--code-header-danger);
+}
+
+.code-box-danger .code-subheader {
+  background-color: var(--code-sub-danger);
+  color: #FEE2E2;
+}
+
+.code-content {
+  background-color: var(--code-body-bg);
+  padding: 16px 18px;
+  max-height: var(--code-max-height);
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+/* Scrollbar estilizada e discreta para os blocos de código */
+.code-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-content::-webkit-scrollbar-track {
+  background: #2B2B2B;
+}
+
+.code-content::-webkit-scrollbar-thumb {
+  background: #555555;
+  border-radius: var(--radius-default);
+}
+
+.code-content::-webkit-scrollbar-thumb:hover {
+  background: #777777;
+}
+
+.code-content pre {
+  margin: 0;
+  font-family: 'Consolas', 'Fira Code', Monaco, monospace;
+  font-size: 11.5px;
+  color: #F9FAFB;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Banners & Alerts (Figma exact match)
+   ========================================================================== */
+/* Cyan Banner: ATENDIMENTO AO PARCEIRO */
+.banner-cyan {
+  background-color: var(--banner-cyan-bg);
+  border-radius: var(--radius-default);
+  padding: 24px;
+  color: #FFFFFF;
+  margin: 28px 0;
+  box-shadow: 0 4px 12px rgba(0, 173, 239, 0.15);
+}
+
+.banner-cyan .banner-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.banner-cyan .banner-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+}
+
+.banner-cyan .banner-icon {
+  width: 28px;
+  height: 28px;
+  stroke: #FFFFFF;
+}
+
+.banner-cyan .banner-body p {
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 12px;
+  color: #FFFFFF;
+}
+
+.banner-cyan .banner-body p:last-child {
+  margin-bottom: 0;
+}
+
+.banner-link {
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Amber/Yellow Banner: ATENÇÃO */
+.banner-amber {
+  background-color: var(--banner-amber-bg);
+  border-radius: var(--radius-default);
+  padding: 20px 24px;
+  color: #FFFFFF;
+  margin: 24px 0;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+}
+
+.banner-amber .banner-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.banner-amber .banner-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
+}
+
+.banner-amber .banner-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #FFFFFF;
+}
+
+.banner-amber .banner-body p {
+  font-size: 14px;
+  line-height: 1.55;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+
+.banner-amber .banner-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Checklist Card (DADOS PARA ANÁLISE CADASTRAL, etc) */
+.checklist-card {
+  width: 100%;
+  margin: 24px 0;
+  border: 1px solid #D1D5DB;
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.checklist-header {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 16px;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid #9CA3AF;
+}
+
+.checklist-body {
+  background-color: #FFFFFF;
+}
+
+.checklist-row {
+  padding: 12px 16px;
+  border-bottom: 1px solid #E5E7EB;
+  font-size: 13.5px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.checklist-row:last-child {
+  border-bottom: none;
+}
+
+.checklist-row:nth-child(even) {
+  background-color: #F9FAFB;
+}
+
+/* ==========================================================================
+   Tables (Figma exact match)
+   ========================================================================== */
+.table-wrap {
+  width: 100%;
+  margin: 24px 0;
+  border: 1px solid #D1D5DB;
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.figma-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.figma-table thead th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  font-weight: 700;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #9CA3AF;
+  letter-spacing: 0.01em;
+}
+
+.figma-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #E5E7EB;
+  color: #374151;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.figma-table tbody tr:nth-child(even) {
+  background-color: #F9FAFB;
+}
+
+.figma-table tbody tr:hover {
+  background-color: #F3F4F6;
+}
+
+.figma-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Diagrams & Media
+   ========================================================================== */
+.diagram-wrap {
+  margin: 28px 0;
+  text-align: left;
+}
+
+.diagram-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-default);
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+
+.diagram-img:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Footer (Figma height 170px)
+   ========================================================================== */
+.doc-footer {
+  background-color: #FFFFFF;
+  border-top: 1px solid #E5E7EB;
+  padding: 36px 0;
+  margin-top: 60px;
+}
+
+.footer-inner {
+  max-width: 1205px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 6px;
+  max-width: 480px;
+}
+
+.footer-contact {
+  font-size: 12px;
+  color: var(--porto-blue);
+  font-weight: 600;
+}
+
+.footer-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333333;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.footer-link:hover {
+  color: var(--porto-blue);
+  text-decoration: underline;
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(3px);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.lightbox-overlay.active {
+  display: flex;
+}
+
+.lightbox-image {
+  max-width: 92%;
+  max-height: 92%;
+  border-radius: var(--radius-default);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1240px) {
+  .header-inner, .document-container, .footer-inner {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .document-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .sidebar-left {
+    width: 100%;
+  }
+  .sidebar-sticky {
+    position: static;
+    max-height: none;
+  }
+  .content-right {
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero-two-col {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-illustration {
+    width: 100%;
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+Figcraft/temp_unzip/
+*.bak
+*.bak-*
+.DS_Store
+Thumbs.db
+
+.figma_token.local

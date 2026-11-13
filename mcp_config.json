@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "figma-writer": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\padill\\AppData\\Roaming\\npm\\node_modules\\figma-console-mcp\\dist\\local.js"
+      ],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "YOUR_FIGMA_ACCESS_TOKEN"
+      }
+    }
+  }
+}
