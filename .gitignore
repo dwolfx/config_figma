@@ -1,4 +1,4 @@
-node_modules/
+﻿node_modules/
 Figcraft/temp_unzip/
 *.bak
 *.bak-*
@@ -6,3 +6,19 @@ Figcraft/temp_unzip/
 Thumbs.db
 
 .figma_token.local
+
+
+# Protecoes de Seguranca Locais
+.env
+.env*
+.env.local
+.env.*.local
+*.env
+dist/
+.venv/
+mcp_config.json
+dsh/*.patch.yml
+dsh/*.block.yml
+
+
+# Protecoes Locais de Seguranca
